@@ -1,151 +1,48 @@
 <template>
-  <div class="home">
-    <section class="hero">
-      <div class="hero-text container">
-        <h4>Vue Responsive Nav Menu</h4>
-        <hr />
-        <h2>
-          With Vue <br />
-          Animations
-        </h2>
-        <hr />
-      </div>
-    </section>
-    <section>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, deserunt voluptatibus. Modi deserunt tenetur illo maxime inventore voluptates dolor, harum, dolores impedit doloremque veniam sapiente error, at commodi suscipit quo?</p>
-
-    </section>
-  </div>
+    <div>
+        {{ message }}
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
+import { onMounted, ref } from 'vue';
+import { useStore } from 'vuex';
 
 export default {
-  name: "Home",
-  components: {},
+    name: "Home",
+    setup() {
+        const message = ref('Sem sessão iniciada');
+
+        const store = useStore();
+
+        onMounted( async () => {
+            try {
+                let response = await fetch('http://localhost:8000/api/user/user',  {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include'
+                });
+
+                const content = await response.json();
+
+                message.value = `Hi ${content.email}`;
+
+                await store.dispatch('setAuth', true);
+
+                if(response.status == 401) {
+                    alert("401 - Não autorizado");
+                }
+            }
+            catch(e) {
+                await store.dispatch('setAuth', false);
+            }
+        });
+
+        return {
+            message
+        }
+    }
 };
 </script>
+

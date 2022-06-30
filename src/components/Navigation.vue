@@ -6,20 +6,26 @@
         </div>
         <ul v-show="!mobile" class="navigation">
             <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
-            <li><router-link class="link" :to="{name: ''}">Equipa</router-link></li>
-            <li><router-link class="link" :to="{name: ''}">Publicaçõoes</router-link></li>
-            <li><router-link class="link" :to="{name: ''}">Projectos</router-link></li>
+            <li><router-link class="link" :to="{name: 'Team'}">Equipa</router-link></li>
+            <li><router-link class="link" :to="{name: 'Publications'}">Publicaçõoes</router-link></li>
+            <li><router-link class="link" :to="{name: 'Projects'}">Projectos</router-link></li>
+            <li><router-link class="link" :to="{name: 'Login'}" v-if="!auth">Entrar</router-link></li>
+            <li><router-link class="link" :to="{name: 'Register'}" v-if="!auth">Registar</router-link></li>
+            <li><router-link class="link" :to="{name: 'Login'}" v-if="auth" @click="logout()">Sair</router-link></li>
         </ul>
         <div class="icon">
             <!-- TODO substituir por ícon font-awesome -->
             <i @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': mobileNav }">O</i>
         </div>
         <transition name="mobile-nav">
-            <ul v-show="mobileNav" class="dropdown-nav">
+        <ul v-show="mobileNav" class="dropdown-nav">
             <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
-            <li><router-link class="link" :to="{name: ''}">Equipa</router-link></li>
-            <li><router-link class="link" :to="{name: ''}">Publicaçõoes</router-link></li>
-            <li><router-link class="link" :to="{name: ''}">Projectos</router-link></li>
+            <li><router-link class="link" :to="{name: 'Team'}">Equipa</router-link></li>
+            <li><router-link class="link" :to="{name: 'Publications'}">Publicaçõoes</router-link></li>
+            <li><router-link class="link" :to="{name: 'Projects'}">Projectos</router-link></li>
+            <li><router-link class="link" :to="{name: 'Login'}" v-if="!auth">Entrar</router-link></li>
+            <li><router-link class="link" :to="{name: 'Register'}" v-if="!auth">Registar</router-link></li>
+            <li><router-link class="link" :to="{name: 'Login'}" v-if="auth" @click="logout()">Sair</router-link></li>
         </ul>
         </transition>
     </nav>
@@ -27,6 +33,9 @@
 </template>
 
 <script>
+import { computed } from '@vue/reactivity';
+import { useStore } from 'vuex';
+
 export default {
     name: "navigation",
     data() {
@@ -35,6 +44,24 @@ export default {
             mobile: true,
             mobileNav: null,
             windowWidth: null
+        }
+    },
+    setup() {
+        const store = useStore();
+       
+        const auth = computed(() => store.state.authenticated);
+       
+        const logout = async () => {
+            await fetch('http://localhost:8000/api/user/logout', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                credentials: 'include',
+            });
+        }
+
+        return {
+            auth,
+            logout
         }
     },
     created() {
@@ -75,7 +102,7 @@ export default {
 
 <style scoped>
 header {
-    background-color: hsla(0, 0%, 0%, 0.8);
+    background-color: #580000;
     z-index: 99;
     width: 100%;
     position: fixed;
@@ -133,6 +160,7 @@ li {
     align-items: center;
     flex: 1;
     justify-content: flex-end;
+    margin-bottom: 0;
 }
 
 .icon {
