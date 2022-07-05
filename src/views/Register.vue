@@ -68,6 +68,7 @@ export default {
 <style scoped>
 .container {
     width: 40vw;
+    height: 70vh;
 }
 
 form {

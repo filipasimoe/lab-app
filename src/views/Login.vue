@@ -1,9 +1,17 @@
 <script>
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import { computed } from '@vue/reactivity';
+import { useStore } from 'vuex';
 
 export default {
     name: "Login",
+    data() {
+        return {
+            userId: null,
+            userAdmin: 0
+        }
+    },
     setup() {
         const data = reactive({
             email: '',
@@ -13,17 +21,16 @@ export default {
         const router = useRouter()
 
         const submit = async () => {
-            let result = await fetch('http://localhost:8000/api/user/login',  {
+            let result = await (await fetch('http://localhost:8000/api/user/login',  {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 credentials: 'include',
                 body: JSON.stringify(data)
-            });
+            })).json();
 
-            if(result.status == 200) {
-                alert("Login feito com sucesso!");
+            if(result.IDU > 0) {
                 await router.push('/');
             }
             else if(result.status == 401) {
@@ -32,11 +39,18 @@ export default {
             else if(result.status == 404) {
                 alert("404 - Utilizador não encontrado!");
             }
-        }
+        };
+
+        const checkAdmin = () => {
+            if(this.userAdmin == 1) {
+                
+            }
+        };
 
         return {
             data, 
-            submit
+            submit,
+            checkAdmin
         }
     }
 };
@@ -57,6 +71,7 @@ export default {
 <style scoped>
 .container {
     width: 40vw;
+    height: 70vh;
 }
 
 form {

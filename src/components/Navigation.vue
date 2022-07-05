@@ -7,11 +7,8 @@
         <ul v-show="!mobile" class="navigation">
             <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
             <li><router-link class="link" :to="{name: 'Team'}">Equipa</router-link></li>
-            <li><router-link class="link" :to="{name: 'Publications'}">Publicaçõoes</router-link></li>
+            <li><router-link class="link" :to="{name: 'Publications'}">Publicações</router-link></li>
             <li><router-link class="link" :to="{name: 'Projects'}">Projectos</router-link></li>
-            <li><router-link class="link" :to="{name: 'Login'}" v-if="!auth">Entrar</router-link></li>
-            <li><router-link class="link" :to="{name: 'Register'}" v-if="!auth">Registar</router-link></li>
-            <li><router-link class="link" :to="{name: 'Login'}" v-if="auth" @click="logout()">Sair</router-link></li>
         </ul>
         <div class="icon">
             <!-- TODO substituir por ícon font-awesome -->
@@ -21,11 +18,8 @@
         <ul v-show="mobileNav" class="dropdown-nav">
             <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
             <li><router-link class="link" :to="{name: 'Team'}">Equipa</router-link></li>
-            <li><router-link class="link" :to="{name: 'Publications'}">Publicaçõoes</router-link></li>
+            <li><router-link class="link" :to="{name: 'Publications'}">Publicações</router-link></li>
             <li><router-link class="link" :to="{name: 'Projects'}">Projectos</router-link></li>
-            <li><router-link class="link" :to="{name: 'Login'}" v-if="!auth">Entrar</router-link></li>
-            <li><router-link class="link" :to="{name: 'Register'}" v-if="!auth">Registar</router-link></li>
-            <li><router-link class="link" :to="{name: 'Login'}" v-if="auth" @click="logout()">Sair</router-link></li>
         </ul>
         </transition>
     </nav>
@@ -40,7 +34,6 @@ export default {
     name: "navigation",
     data() {
         return {
-            scrolledNav: null,
             mobile: true,
             mobileNav: null,
             windowWidth: null
@@ -77,15 +70,6 @@ export default {
         toggleMobileNav() {
             this.mobileNav = !this.mobileNav;
         },
-        updateScroll() {
-            const scrollPosition = window.scrollY;
-            if(scrollPosition > 50) {
-                this.scrolledNav = true;
-                return;
-            }
-            this.scrolledNav = false;
-            return;
-        },
         checkScreen() {
             this.windowWidth = window.innerWidth;
             if(this.windowWidth <= 750) {
@@ -101,6 +85,10 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  font-family: "Raleway", sans-serif;
+}
 header {
     background-color: #580000;
     z-index: 99;
@@ -141,8 +129,8 @@ li {
 }
 
 .link:hover {
-    color: purple;
-    border-color: red;
+    color: white;
+    border-color: white;
 }
 
 .branding {
@@ -161,6 +149,7 @@ li {
     flex: 1;
     justify-content: flex-end;
     margin-bottom: 0;
+    margin-right: 5vw;
 }
 
 .icon {
@@ -201,20 +190,6 @@ i {
 
 .dropdown-nav li .link {
     color: black;
-}
-
-.scrolled-nav {
-    background-color: black;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.scrolled-nav nav {
-    pad: 8px 0;
-}
-
-.scrolled-nav nav .branding img {
-    width: 30px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .mobile-nav-enter-active {

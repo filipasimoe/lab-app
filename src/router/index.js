@@ -5,6 +5,12 @@ import Register from "../views/Register.vue"
 import Projects from "../views/Projects.vue"
 import Publications from "../views/Publications.vue"
 import Team from "../views/Team.vue"
+import AddPerson from "../views/AddPerson.vue"
+import ProtecaoDados from "../views/ProtecaoDados.vue"
+import PoliticaPrivacidade from "../views/PoliticaPrivacidade.vue"
+import FAQs from "../views/FAQs.vue"
+import AddProject from "../views/AddProject.vue"
+import AddPublication from "../views/AddPublication.vue"
 
 const routes = [
   {
@@ -28,15 +34,45 @@ const routes = [
     component: Publications,
   },
   {
+    path: "/add-publication",
+    name: "AddPublication",
+    component: AddPublication,
+  },
+  {
     path: "/projects",
     name: "Projects",
     component: Projects,
+  },
+  {
+    path: "/add-project",
+    name: "AddProject",
+    component: AddProject,
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
   },
+  {
+    path: "/add-person",
+    name: "AddPerson",
+    component: AddPerson,
+  },
+  {
+    path: "/protecao-dados",
+    name: "ProtecaoDados",
+    component: ProtecaoDados,
+  },
+  {
+    path: "/politica-privacidade",
+    name: "PoliticaPrivacidade",
+    component: PoliticaPrivacidade,
+  },
+  {
+    path: "/faqs",
+    name: "FAQs",
+    component: FAQs,
+  }
 ];
 
 const router = createRouter({
