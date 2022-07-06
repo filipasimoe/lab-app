@@ -3,7 +3,7 @@
         <div class="cards">
             <div class="card" v-for="person in team">
                 <!-- Tem de ir buscar à memória -->
-                <img src="../assets/team1.jpg" alt="Person">
+                <img src="../../assets/team1.jpg" alt="Person">
                 <div class="container">
                     <div class="bold">
                         {{ person.name }}
@@ -15,7 +15,7 @@
                     {{ person.bio }}
                     <p><button class="button">Ver Projectos</button></p>
                     <p><button class="button">Ver Publicações</button></p>
-                    <p v-if="person.IDU == id || admin"><button class="button">Editar</button></p>
+                    <p v-if="person.IDU == id || admin"><button class="button"><router-link class="add-link" :to="{name: 'EditPerson'}">Editar</router-link></button></p>
                 </div>
             </div>
         </div>

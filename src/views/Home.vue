@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <div v-if="admin">É ADMINISTRADOR</div>
         <div class="card">
             <h2>
                 Quem Somos?
