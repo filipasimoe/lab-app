@@ -13,6 +13,7 @@ export default {
         }
     },
     setup() {
+        // When the value changes on the page, the variable is updated aka reactive
         const data = reactive({
             email: '',
             password: ''

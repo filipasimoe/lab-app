@@ -15,7 +15,9 @@
                     {{ person.bio }}
                     <p><button class="button">Ver Projectos</button></p>
                     <p><button class="button">Ver Publicações</button></p>
-                    <p v-if="person.IDU == id || admin"><button class="button"><router-link class="add-link" :to="{name: 'EditPerson'}">Editar</router-link></button></p>
+                    <p v-if="person.IDU == id || admin"><button class="button adminButton" @click="setTargetId(person.IDU)">Editar</button></p>
+                    <p v-if="admin"><button class="button add-link adminButton" @click="deletePerson(person.IDU)">Apagar</button></p>
+
                 </div>
             </div>
         </div>
@@ -28,6 +30,7 @@
 <script>
 import { computed } from '@vue/reactivity';
 import { useStore } from 'vuex';
+import router from '../../router';
 
 export default {
     name: "Team",
@@ -47,7 +50,25 @@ export default {
     async beforeCreate() {
         const data = await (await fetch(`http://localhost:8000/api/researcher/all`)).json();
         this.team = data;
+    },
+    methods: {
+        async setTargetId(target) {
+            await this.$store.dispatch("setTarget", target);
+            this.$router.push('/edit-person')
+        },
+        async deletePerson(id) {
+            const del = await fetch(`http://localhost:8000/api/researcher/delete/${id}`, {
+                method:'DELETE'
+            });
+
+            const jsonDel = await del.json();
+
+            alert(jsonDel.message);
+            console.log(jsonDel.message);
+            await router.push('/team');
+        }
     }
+
 };
 </script>
 
@@ -189,5 +210,9 @@ export default {
     margin: 5vh auto;
     display: flex;
     justify-content: center;
+}
+
+.adminButton {
+    background-color: #580000ce !important;
 }
 </style>

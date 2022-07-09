@@ -21,7 +21,7 @@
         </div>
         <div class="add-btn">
             <!-- Só deve poder adicionar artigos para o email que tem sessão iniciada -->
-            <button class="add"><router-link class="add-link" :to="{name: 'AddPublication'}">Adicionar Artigo</router-link></button>
+            <button class="add"><router-link class="add-link" :to="{name: 'AddPublication'}">Adicionar Publicação</router-link></button>
         </div>
     </div>
 </template>

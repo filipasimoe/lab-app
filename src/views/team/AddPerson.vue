@@ -10,7 +10,7 @@
             <label for="bio">Biografia:</label><br>
             <textarea name="bio" v-model="data.bio" id="bio" form="add-person" placeholder="Introduza uma pequena biografia"></textarea> 
             <div class="btn-wrap">
-                <label for="photo">Ao carregar em submeter, vai ser-lhe pedido que escolha uma fotografia</label><br>
+                <label for="photo">Fotografia de Perfil</label><br>
                 <!--<button @click="pick()">Escolher fotografia</button>-->
                 <input type="file" @change="onFileSelected($event)" accept="image/*" id="photo" name="photo"><br>
             </div>

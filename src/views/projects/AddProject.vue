@@ -41,7 +41,7 @@ export default {
             email: ''
         });
 
-        const router = useRouter()
+        const router = useRouter();
 
         const submitProject = async () => {
 
@@ -78,6 +78,7 @@ export default {
 <style scoped>
 .big {
     height: 80vh;
+    margin-bottom: 25vh;
 }
 
 form {
@@ -98,7 +99,7 @@ input[type=file] {
   position: relative;
 }
 
-input[type=text], input[type=email], textarea {
+input[type=text], input[type=email], input[type=number], textarea {
     width: 100%;
     padding: 12px 20px;
     border: none;
