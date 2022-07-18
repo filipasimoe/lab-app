@@ -1,5 +1,6 @@
 <template>
     <div class="big">
+        <p v-if="admin" id="admin">Sessão iniciada como administrador</p>
         <div class="cards">
             <div class="card" v-for="person in team">
                 <!-- Tem de ir buscar à memória -->
@@ -13,9 +14,9 @@
                     {{ person.email }}
                     <br>
                     {{ person.bio }}
-                    <p><button class="button">Ver Projectos</button></p>
-                    <p><button class="button">Ver Publicações</button></p>
-                    <p v-if="person.IDU == id || admin"><button class="button adminButton" @click="setTargetId(person.IDU)">Editar</button></p>
+                    <p><button class="button" @click="setTargetIdProjects(person.IDU)">Ver Projectos</button></p>
+                    <p><button class="button" @click="setTargetIdPublications(person.IDU)">Ver Publicações</button></p>
+                    <p v-if="person.IDU == id || admin"><button class="button adminButton" @click="setTargetIdEdit(person.IDU)">Editar</button></p>
                     <p v-if="admin"><button class="button add-link adminButton" @click="deletePerson(person.IDU)">Apagar</button></p>
 
                 </div>
@@ -48,16 +49,24 @@ export default {
         }
     },
     async beforeCreate() {
-        const data = await (await fetch(`http://localhost:8000/api/researcher/all`)).json();
+        const data = await (await fetch(`https://localhost:8000/api/researcher/all`)).json();
         this.team = data;
     },
     methods: {
-        async setTargetId(target) {
+        async setTargetIdEdit(target) {
             await this.$store.dispatch("setTarget", target);
             this.$router.push('/edit-person')
         },
+        async setTargetIdProjects(target) {
+            await this.$store.dispatch("setTarget", target);
+            this.$router.push('/projects-id')
+        },
+        async setTargetIdPublications(target) {
+            await this.$store.dispatch("setTarget", target);
+            this.$router.push('/publications-id')
+        },
         async deletePerson(id) {
-            const del = await fetch(`http://localhost:8000/api/researcher/delete/${id}`, {
+            const del = await fetch(`https://localhost:8000/api/researcher/delete/${id}`, {
                 method:'DELETE'
             });
 
@@ -214,5 +223,22 @@ export default {
 
 .adminButton {
     background-color: #580000ce !important;
+}
+
+#admin {
+    width: 70vw;
+    margin: 0 auto;
+    color: white;
+    background-color: #580000;
+    border: 2px solid #580000;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.btn-link {
+    color:white;
+    text-decoration: none;
 }
 </style>

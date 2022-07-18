@@ -11,7 +11,11 @@ import ProtecaoDados from "../views/ProtecaoDados.vue"
 import PoliticaPrivacidade from "../views/PoliticaPrivacidade.vue"
 import FAQs from "../views/FAQs.vue"
 import AddProject from "../views/projects/AddProject.vue"
+import EditProject from "../views/projects/EditProject.vue"
 import AddPublication from "../views/publications/AddPublication.vue"
+import EditPublication from "../views/publications/EditPublication.vue"
+import ProjectsID from "../views/projects/ProjectsID.vue"
+import PublicationsID from "../views/publications/PublicationsID.vue"
 
 const routes = [
   {
@@ -45,6 +49,11 @@ const routes = [
     component: AddPublication,
   },
   {
+    path: "/edit-publication",
+    name: "EditPublication",
+    component: EditPublication,
+  },
+  {
     path: "/projects",
     name: "Projects",
     component: Projects,
@@ -53,6 +62,11 @@ const routes = [
     path: "/add-project",
     name: "AddProject",
     component: AddProject,
+  },
+  {
+    path: "/edit-project",
+    name: "EditProject",
+    component: EditProject,
   },
   {
     path: "/register",
@@ -78,6 +92,16 @@ const routes = [
     path: "/faqs",
     name: "FAQs",
     component: FAQs,
+  },
+  {
+    path: "/projects-id",
+    name: "ProjectsID",
+    component: ProjectsID,
+  },
+  {
+    path: "/publications-id",
+    name: "PublicationsID",
+    component: PublicationsID,
   }
 ];
 

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="h3 mb-3 fw-normal">Registar</h1>
+        <h1 class="h3 mb-3 fw-normal">Registar Novo Utilizador</h1>
         <form @submit.prevent="submit()">
             <input v-model="data.email" type="email" class="" placeholder="name@example.com">
             <input v-model="data.password" type="password" class="" placeholder="Password">
@@ -37,7 +37,7 @@ export default {
                 alert("A password deve ter pelo menos 6 caracteres");
                 return;
             }
-            let result = await fetch('http://localhost:8000/api/user/register',  {
+            let result = await fetch('https://localhost:8000/api/user/register',  {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -48,11 +48,8 @@ export default {
             if(result.status == 200) {
                 alert("Registo feito com sucesso!");
             }
-            else if(result.status == 400) {
-                alert("400 - Erro no registo!");
-            }
-            else if(result.status == 404) {
-                alert("404 - Utilizador não encontrado!");
+            else if(result.status == 401) {
+                alert("400 - Erro no registo, o email já existe!");
             }
             await router.push('/login');
         }
@@ -146,4 +143,5 @@ button:focus {
 h1 {
   padding-bottom: 6px;
 }
+
 </style>

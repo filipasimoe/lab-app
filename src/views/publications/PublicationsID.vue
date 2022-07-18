@@ -1,8 +1,8 @@
 <template>
     <div class=".big">
         <p v-if="admin" id="admin">Sessão iniciada como administrador</p>
-        <div class="articles">
-            <div class="article" v-for="article in articles">
+        <div class="publications">
+            <div class="publication" v-for="article in publications">
                 <div class="container">
                     <p class="title">
                         {{ article.title }}
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="add-btn">
-            <!-- Só deve poder adicionar artigos para o email que tem sessão iniciada -->
+            <!-- Só deve poder adicionar publicações para o email que tem sessão iniciada -->
             <button class="add" v-if="auth"><router-link class="add-link" :to="{name: 'AddPublication'}">Adicionar Publicação</router-link></button>
         </div>
     </div>
@@ -36,7 +36,7 @@ import { computed } from '@vue/reactivity';
 import { useStore } from 'vuex';
 
 export default {
-    name: "Articles",
+    name: "PublicationsID",
     data() {
         const store = useStore();
 
@@ -44,21 +44,24 @@ export default {
 
         const admin = computed(() => store.state.isAdmin);
 
-        const id = computed(() => store.state.userId);
+        const id = computed(() => store.state.targetId);
 
         return {
-            articles: '',
-            auth, 
-            id, 
+            publications: '',
+            auth,
+            id,
             admin
         }
     },
     async beforeCreate() {
-        const data = await (await fetch(`https://localhost:8000/api/article/all`)).json();
-        this.articles = data;
+        const store = useStore();
+        const target = computed(() => store.state.targetId);
+
+        const data = await (await fetch(`https://localhost:8000/api/article/from/${target.value}`)).json();
+        this.publications = data;
     },
     methods: {
-        getMonthName(month){
+      getMonthName(month){
             const d = new Date();
             d.setMonth(month-1);
             const monthName = d.toLocaleString("default", {month: "long"});
@@ -67,21 +70,6 @@ export default {
 
             return monthCaps;
         },
-        async setTargetId(target) {
-            await this.$store.dispatch("setTarget", target);
-            this.$router.push('/edit-publication')
-        },
-        async deletePublication(id) {
-            const del = await fetch(`https://localhost:8000/api/article/delete/${id}`, {
-                method:'DELETE'
-            });
-
-            const jsonDel = await del.json();
-
-            alert(jsonDel.message);
-            console.log(jsonDel.message);
-            await router.push('/publications');
-        }
     }
 };
 </script>
@@ -90,7 +78,7 @@ export default {
 .big {
     margin: 0 auto;
 }
-.articles {
+.publications {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -102,12 +90,12 @@ export default {
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
-  .articles {
+  .publications {
     flex-direction: column;
   }
 }
 
-.article {
+.publication {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 35px;
   line-height: 2em;
@@ -245,20 +233,6 @@ a {
     justify-content: center;
 }
 
-.italic {
-    font-style: italic;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    text-decoration: none;
-    color: white;
-}
-
 #admin {
     width: 70vw;
     margin: 0 auto;
@@ -269,5 +243,9 @@ a:hover {
     border-radius: 5px;
     opacity: 0.5;
     text-align: center;
+}
+
+button a {
+  color: white;
 }
 </style>

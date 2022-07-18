@@ -5,18 +5,18 @@
             <img src="../assets/logo.png" alt="">
         </div>
         <ul v-show="!mobile" class="navigation">
-            <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
+            <li><router-link class="link" :to="{name: 'Home'}">Início</router-link></li>
             <li><router-link class="link" :to="{name: 'Team'}">Equipa</router-link></li>
             <li><router-link class="link" :to="{name: 'Publications'}">Publicações</router-link></li>
             <li><router-link class="link" :to="{name: 'Projects'}">Projectos</router-link></li>
         </ul>
         <div class="icon">
             <!-- TODO substituir por ícon font-awesome -->
-            <i @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': mobileNav }">O</i>
+            <i @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': mobileNav }">Menu</i>
         </div>
         <transition name="mobile-nav">
         <ul v-show="mobileNav" class="dropdown-nav">
-            <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
+            <li><router-link class="link" :to="{name: 'Home'}">Início</router-link></li>
             <li><router-link class="link" :to="{name: 'Team'}">Equipa</router-link></li>
             <li><router-link class="link" :to="{name: 'Publications'}">Publicações</router-link></li>
             <li><router-link class="link" :to="{name: 'Projects'}">Projectos</router-link></li>
@@ -45,7 +45,7 @@ export default {
         const auth = computed(() => store.state.authenticated);
        
         const logout = async () => {
-            await fetch('http://localhost:8000/api/user/logout', {
+            await fetch('https://localhost:8000/api/user/logout', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 credentials: 'include',
@@ -165,12 +165,10 @@ i {
     cursor: pointer;
     font-size: 24px;
     transition: .8 ease all;
+    font-style: normal;
+    font-size: 1em;
 }
 
-/* TODO substituir por 90 graus */
-.icon-active {
-    transform: rotate(180deg);
-}
 
 .dropdown-nav {
     display: flex;

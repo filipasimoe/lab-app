@@ -1,5 +1,6 @@
 <template>
     <div class=".big">
+        <p v-if="admin" id="admin">Sessão iniciada como administrador</p>
         <div class="projects">
             <div class="project" v-for="project in projects">
                 <div class="container">
@@ -10,7 +11,11 @@
                     <p><span class="underline"> Início:</span> {{ project.year }}</p>
                     <p><span class="underline"> Investigador:</span> {{ project.name }}</p>
                     <p><span class="underline"> Contacto:</span> <a href="mailto:{{project.email}}">{{ project.email }}</a></p>
+                    
                     <p><button class="button">Saber Mais</button></p>
+                    
+                    <p v-if="project.IDU == id || admin"><button class="button adminButton" @click="setTargetId(project.IDP)">Editar</button></p>
+                    <p v-if="project.IDU == id || admin"><button class="button adminButton" @click="deleteProject(project.IDP)">Apagar</button></p>
                 </div>
             </div>
         </div>
@@ -29,16 +34,40 @@ export default {
     name: "Projects",
     data() {
         const store = useStore();
+
         const auth = computed(() => store.state.authenticated);
+
+        const admin = computed(() => store.state.isAdmin);
+
+        const id = computed(() => store.state.userId);
 
         return {
             projects: '',
-            auth
+            auth,
+            id,
+            admin
         }
     },
     async beforeCreate() {
-        const data = await (await fetch(`http://localhost:8000/api/project/all`)).json();
+        const data = await (await fetch(`https://localhost:8000/api/project/all`)).json();
         this.projects = data;
+    },
+    methods: {
+        async setTargetId(target) {
+            await this.$store.dispatch("setTarget", target);
+            this.$router.push('/edit-project')
+        },
+        async deleteProject(id) {
+            const del = await fetch(`https://localhost:8000/api/project/delete/${id}`, {
+                method:'DELETE'
+            });
+
+            const jsonDel = await del.json();
+
+            alert(jsonDel.message);
+            console.log(jsonDel.message);
+            await router.push('/projects');
+        }
     }
 };
 </script>
@@ -109,13 +138,13 @@ export default {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    width: fit-content;
+    width: 20vw;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 
 .container p {
@@ -200,5 +229,17 @@ a {
     margin: 5vh auto;
     display: flex;
     justify-content: center;
+}
+
+#admin {
+    width: 70vw;
+    margin: 0 auto;
+    color: white;
+    background-color: #580000;
+    border: 2px solid #580000;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.5;
+    text-align: center;
 }
 </style>

@@ -1,101 +1,88 @@
 <template>
     <div class="big">
-        <form id="add-project" @submit.prevent="submitProject">
-            <label for="title">Título do Projecto:</label><br>
-            <input type="text" v-model="data.title" id="title" name="title" placeholder="Introduza o título do projecto:"><br>
-            <!-- FIXME falta crear um endpoint para adicionar um investigador a um projecto que já exista -->
-            
-            <label for="email">Email do Investigador Associado:</label><br>
-            <input type="email" v-model="data.email" id="email" name="email" placeholder="Introduza o email"><br>
-            
+        <form id="edit-project" @submit.prevent="submitProject">
+
             <label for="duration">Duração do Projecto (em anos):</label><br>
             <input type="number"  min="1" step="1" v-model="data.duration" id="duration" name="duration" placeholder="Introduza a duração"><br>
             
             <label for="context">Contexto:</label><br>
             <input type="text" v-model="data.context" id="context" name="context" placeholder="Introduza o contexto do projecto"><br>
             
-            <label for="duration">Ano de início:</label><br>
+            <label for="year">Ano de início:</label><br>
             <input type="number" min="1900" max="2099" step="1" v-model="data.year" id="year" name="year" placeholder="Introduza o ano"><br>
             
             <label for="description">Descrição do Projecto:</label><br>
             <textarea name="description" v-model="data.description" id="description" form="add-project" placeholder="Introduza uma descrição para o projecto"></textarea> 
             
-            <input type="submit" value="Adicionar Projecto">
+            <input type="submit" value="Submeter Edição">
         </form>
     </div>
 </template>
 
 <script>
-import { reactive } from 'vue';
-import { useRouter } from 'vue-router';
 import { computed } from '@vue/reactivity';
 import { useStore } from 'vuex';
+import { reactive } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default {
-    name: "AddProject",
+    name: "EditProject",
     setup() {
-        const data = reactive({
-            title: '',
-            duration: '',
-            context: '',
-            description: '',
-            year: '',
-            email: ''
+        const router = useRouter()
+
+        const store = useStore();
+ 
+        const target = computed(() => store.state.targetId);
+
+        const data = ({
+            IDP: target.value,
+            duration: null,
+            context: null,
+            year: null,
+            description: null
         });
 
-        const router = useRouter();
-        
-        const store = useStore();
-
-        const email = computed(() => store.state.userEmail);
-
-        const admin = computed(() => store.state.isAdmin);
-
         const submitProject = async () => {
-            if(email.value != data.email && !admin.value) {
-                alert("Esta conta não tem permissão para adicionar projectos para " + data.email);
-                console.log("Esta conta não tem permissão para adicionar projectos para " + data.email);
-            }
-            else {
-                const add = await fetch('https://localhost:8000/api/project/add',  {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    credentials: 'include',
-                    body: JSON.stringify(data)
-                });
+            console.log(data);
+            const edit = await fetch('https://localhost:8000/api/project/edit',  {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(data)
+            });
 
-                const jsonAdd = await add.json();
+            const jsonEdit = await edit.json();
 
-                if(add.status == 200) {
-                    alert(jsonAdd.message);
-                    console.log(jsonAdd.message);
-                    await router.push('/projects');
-                }
+            alert(jsonEdit.message)
+            console.log(jsonEdit.message);
+            await router.push('/projects');
+        }
 
-                if(add.status == 400 || add.status == 401 || add.status == 404) {
-                    console.log(jsonAdd.message);
-                    await router.push('/projects');
-                }    
-            }   
-        }   
         return {
             data,
+            target,
             submitProject
         }
-    }  
-};
+    },
+    async mounted() {
+        this.$project = await (await fetch(`https://localhost:8000/api/project/info/${this.target}`)).json();
+
+        document.getElementById("duration").value = this.$project.duration;
+        document.getElementById("context").value = this.$project.context;
+        document.getElementById("description").value = this.$project.description;
+        document.getElementById("year").value = this.$project.year;
+    }
+}
 </script>
 
 <style scoped>
 .big {
     height: 80vh;
-    margin-bottom: 25vh;
 }
-
 form {
-    width: 50vw;
+    width: 50%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -165,6 +152,5 @@ input[type=submit]:hover {
 input[type=submit]:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
-
-
 </style>
+

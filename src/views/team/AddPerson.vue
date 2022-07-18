@@ -44,12 +44,12 @@ export default {
         const submitPerson = async () => {
             // Tenho de verificar primeiro se o email já existe
 
-            const response = (await fetch(`http://localhost:8000/api/researcher/info/${data.email}`));
+            const response = (await fetch(`https://localhost:8000/api/researcher/info/${data.email}`));
 
             const jsonResponse = await response.json();
 
             if(response.status == 200) {
-                const add = await fetch('http://localhost:8000/api/researcher/add',  {
+                const add = await fetch('https://localhost:8000/api/researcher/add',  {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -92,8 +92,9 @@ export default {
 .big {
     height: 80vh;
 }
+
 form {
-    width: fit-content;
+    width: 50%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

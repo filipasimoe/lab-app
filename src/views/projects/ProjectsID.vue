@@ -1,32 +1,24 @@
 <template>
     <div class=".big">
         <p v-if="admin" id="admin">Sessão iniciada como administrador</p>
-        <div class="articles">
-            <div class="article" v-for="article in articles">
+        <div class="projects">
+            <div class="project" v-for="project in projects">
                 <div class="container">
-                    <p class="title">
-                        {{ article.title }}
-                    </p>
-                    <p>
-                        {{ getMonthName(article.month ) + " " + article.year}}
-                    </p>
-                    <p class="italic">
-                        {{ article.authors }}
-                    </p>
-                    <p>
-                        {{ article.context }}
-                    </p>
-                    <p><button class="button"><a target="_blank" :href="`${article.url}`">Aceder ao Artigo</a></button></p>
-
-                    <p v-if="article.IDU == id || admin"><button class="button adminButton" @click="setTargetId(article.IDA)">Editar</button></p>
-                    <p v-if="article.IDU == id || admin"><button class="button adminButton" @click="deletePublication(article.IDA)">Apagar</button></p>
-
+                    <p class="title">{{ project.title }}</p>
+                    <p><span class="underline"> Duração:</span> {{ project.duration }} <span v-if="project.duration == 1">ano</span><span v-if="project.duration > 1">anos</span></p>
+                    <p><span class="underline"> Contexto:</span> {{ project.context }}</p>
+                    <p><span class="underline"> Descrição:</span> {{ project.description }}</p>
+                    <p><span class="underline"> Início:</span> {{ project.year }}</p>
+                    <p><span class="underline"> Investigador:</span> {{ project.name }}</p>
+                    <p><span class="underline"> Contacto:</span> <a href="mailto:{{project.email}}">{{ project.email }}</a></p>
+                    
+                    <p><button class="button">Saber Mais</button></p>
                 </div>
             </div>
         </div>
         <div class="add-btn">
-            <!-- Só deve poder adicionar artigos para o email que tem sessão iniciada -->
-            <button class="add" v-if="auth"><router-link class="add-link" :to="{name: 'AddPublication'}">Adicionar Publicação</router-link></button>
+            <!-- Só deve poder adicionar projectos para o email que tem sessão iniciada -->
+            <button class="add" v-if="auth"><router-link class="add-link" :to="{name: 'AddProject'}">Adicionar Projecto</router-link></button>
         </div>
     </div>
 </template>
@@ -36,7 +28,7 @@ import { computed } from '@vue/reactivity';
 import { useStore } from 'vuex';
 
 export default {
-    name: "Articles",
+    name: "ProjectsID",
     data() {
         const store = useStore();
 
@@ -44,44 +36,21 @@ export default {
 
         const admin = computed(() => store.state.isAdmin);
 
-        const id = computed(() => store.state.userId);
+        const id = computed(() => store.state.targetId);
 
         return {
-            articles: '',
-            auth, 
-            id, 
+            projects: '',
+            auth,
+            id,
             admin
         }
     },
     async beforeCreate() {
-        const data = await (await fetch(`https://localhost:8000/api/article/all`)).json();
-        this.articles = data;
-    },
-    methods: {
-        getMonthName(month){
-            const d = new Date();
-            d.setMonth(month-1);
-            const monthName = d.toLocaleString("default", {month: "long"});
+        const store = useStore();
+        const target = computed(() => store.state.targetId);
 
-            const monthCaps = monthName.charAt(0).toUpperCase() + monthName.slice(1);
-
-            return monthCaps;
-        },
-        async setTargetId(target) {
-            await this.$store.dispatch("setTarget", target);
-            this.$router.push('/edit-publication')
-        },
-        async deletePublication(id) {
-            const del = await fetch(`https://localhost:8000/api/article/delete/${id}`, {
-                method:'DELETE'
-            });
-
-            const jsonDel = await del.json();
-
-            alert(jsonDel.message);
-            console.log(jsonDel.message);
-            await router.push('/publications');
-        }
+        const data = await (await fetch(`https://localhost:8000/api/project/from/${target.value}`)).json();
+        this.projects = data;
     }
 };
 </script>
@@ -90,7 +59,7 @@ export default {
 .big {
     margin: 0 auto;
 }
-.articles {
+.projects {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -102,12 +71,12 @@ export default {
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
 @media (max-width: 800px) {
-  .articles {
+  .projects {
     flex-direction: column;
   }
 }
 
-.article {
+.project {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: 35px;
   line-height: 2em;
@@ -243,20 +212,6 @@ a {
     margin: 5vh auto;
     display: flex;
     justify-content: center;
-}
-
-.italic {
-    font-style: italic;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    text-decoration: none;
-    color: white;
 }
 
 #admin {

@@ -30,6 +30,8 @@
 <script>
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
+import { computed } from '@vue/reactivity';
+import { useStore } from 'vuex';
 
 export default {
   name: "AddPublication",
@@ -46,29 +48,40 @@ export default {
 
     const router = useRouter();
 
+    const store = useStore();
+
+    const email = computed(() => store.state.userEmail);
+
+    const admin = computed(() => store.state.isAdmin);
+
     const submitPublication = async () => {
-      const add = await fetch('http://localhost:8000/api/article/add', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        credentials: 'include',
-        body: JSON.stringify(data)
-      });
-
-      const jsonAdd = await add.json();
-
-      if(add.status == 200) {
-          alert(jsonAdd.message);
-          console.log(jsonAdd.message);
-          await router.push('/publications');
+      if(email.value != data.email && !admin.value) {
+        alert("Esta conta não tem permissão para adicionar projectos para " + data.email);
+        console.log("Esta conta não tem permissão para adicionar projectos para " + data.email);
       }
+      
+      else {
+        const add = await fetch('https://localhost:8000/api/article/add', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          credentials: 'include',
+          body: JSON.stringify(data)
+        });
 
-      if(add.status == 400 || add.status == 401 || add.status == 404) {
-          console.log(jsonAdd.message);
-          await router.push('/publications');
-      }   
+        const jsonAdd = await add.json();
+
+        alert(jsonAdd.message);
+        console.log(jsonAdd.message);
+        await router.push('/publications');
+    
+
+        console.log(jsonAdd.message);
+        await router.push('/publications');
+      } 
     }
+
     return {
             data,
             submitPublication

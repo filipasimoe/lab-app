@@ -42,9 +42,9 @@
                         Área Reservada
                     </h4>
                     <ul>
-                         <li><router-link class="link" :to="{name: 'Login'}" v-if="!auth">Entrar</router-link></li>
-                        <li><router-link class="link" :to="{name: 'Register'}" v-if="!auth">Registar</router-link></li>
-                        <li><router-link class="link" :to="{name: 'Login'}" v-if="auth" @click="logout()">Sair</router-link></li>
+                         <li><router-link class="link" :to="{name: 'Login'}" v-if="!auth">Iniciar Sessão</router-link></li>
+                        <li><router-link class="link" :to="{name: 'Register'}" v-if="admin">Registar Novo Utilizador</router-link></li>
+                        <li><router-link class="link" :to="{name: 'Login'}" v-if="auth" @click="logout()">Terminar Sessão</router-link></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -73,9 +73,11 @@ export default {
         const store = useStore();
        
         const auth = computed(() => store.state.authenticated);
+
+        const admin = computed(() => store.state.isAdmin);
        
         const logout = async () => {
-            await fetch('http://localhost:8000/api/user/logout', {
+            await fetch('https://localhost:8000/api/user/logout', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 credentials: 'include',
@@ -84,6 +86,7 @@ export default {
 
         return {
             auth,
+            admin,
             logout
         }
     },

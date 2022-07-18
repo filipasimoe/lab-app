@@ -22,7 +22,7 @@ export default {
         const router = useRouter()
 
         const submit = async () => {
-            let result = await (await fetch('http://localhost:8000/api/user/login',  {
+            let result = await (await fetch('https://localhost:8000/api/user/login',  {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -42,16 +42,9 @@ export default {
             }
         };
 
-        const checkAdmin = () => {
-            if(this.userAdmin == 1) {
-                
-            }
-        };
-
         return {
             data, 
-            submit,
-            checkAdmin
+            submit
         }
     }
 };
